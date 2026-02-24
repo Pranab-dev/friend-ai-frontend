@@ -3,7 +3,7 @@ const sendBtn = document.getElementById("send-btn");
 const messagesDiv = document.getElementById("messages");
 
 // Replace with your Render backend URL
-const BACKEND_URL = "https://friend-ai-backend.onrender.com/";
+const BACKEND_URL = "https://friend-ai-server.onrender.com";
 
 function addMessage(text, className) {
   const div = document.createElement("div");
