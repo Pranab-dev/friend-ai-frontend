@@ -30,19 +30,12 @@ async function sendMessage() {
     const data = await res.json();
     addMessage(data.reply, "ai-msg");
 
-    if (data.media && data.mediaType) {
-      const mediaEl = document.createElement(data.mediaType);
-      mediaEl.src = data.media;
-      mediaEl.style.maxWidth = "100%";
-      messagesDiv.appendChild(mediaEl);
-    }
-
   } catch (err) {
     addMessage("Connection problem", "ai-msg");
   }
 }
 
 sendBtn.addEventListener("click", sendMessage);
-chatInput.addEventListener("keypress", (e) => {
+chatInput.addEventListener("keypress", e => {
   if (e.key === "Enter") sendMessage();
 });
